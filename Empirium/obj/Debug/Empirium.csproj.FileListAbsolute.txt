@@ -1,8 +1,0 @@
-F:\ProjectDirectory\Empirium\Empirium\bin\Debug\Empirium.exe.config
-F:\ProjectDirectory\Empirium\Empirium\bin\Debug\Empirium.exe
-F:\ProjectDirectory\Empirium\Empirium\bin\Debug\Empirium.pdb
-F:\ProjectDirectory\Empirium\Empirium\bin\Debug\Newtonsoft.Json.dll
-F:\ProjectDirectory\Empirium\Empirium\bin\Debug\Newtonsoft.Json.xml
-F:\ProjectDirectory\Empirium\Empirium\obj\Debug\Empirium.csprojResolveAssemblyReference.cache
-F:\ProjectDirectory\Empirium\Empirium\obj\Debug\Empirium.exe
-F:\ProjectDirectory\Empirium\Empirium\obj\Debug\Empirium.pdb
