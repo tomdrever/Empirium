@@ -29,7 +29,14 @@ namespace Empirium
 
         public Element GetElementFromAtomicNumber(double atomicNumber)
         {
-            return _elements.Find(element => element.MassNumber.Equals(atomicNumber));
+            var foundElement = _elements.Find(element => element.MassNumber.Equals(atomicNumber));
+
+            if (foundElement != null)
+            {
+                return _elements.Find(element => element.MassNumber.Equals(atomicNumber));
+            }
+
+            throw new ArgumentNullException();
         }
 
         public static ElementDictionary LoadFromJSON(string directory)

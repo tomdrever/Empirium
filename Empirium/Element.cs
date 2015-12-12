@@ -13,8 +13,8 @@ namespace Empirium
         public double MassNumber { get; set; }
     }
 
-    public class UnknownAtomicMassException : Exception
+    public class UnknownMassNumberException : Exception
     {
-        public UnknownAtomicMassException(Element element) : base(element.Name + " has no known value. Cannot compute.") { }
+        public UnknownMassNumberException(Element element) : base(element.Name + " has no known value. Cannot compute.") { }
     }
 }

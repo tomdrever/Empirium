@@ -37,7 +37,11 @@ namespace Empirium
                 }
                 catch (IndexOutOfRangeException)
                 {
-                    return "Too few entered components";
+                    return "Too few entered components.";
+                }
+                catch (ArgumentNullException)
+                {
+                    return "Could not ascertain element from input.";
                 }
 
             }
