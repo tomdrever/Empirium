@@ -45,7 +45,7 @@ namespace Empirium
             // If the mass number is 0, do not attempt to calculate
             if (inputDictionary.Keys.Any(element => element.MassNumber.Equals(0)))
             {
-                throw new UnknownAtomicMassException(inputDictionary.Keys.First(element => element.MassNumber.Equals(0)));
+                throw new UnknownMassNumberException(inputDictionary.Keys.First(element => element.MassNumber.Equals(0)));
             }
 
             // Get the quantities by dividing the mass given in the input by the mass number of the given element, then dividing that by the smallest result
