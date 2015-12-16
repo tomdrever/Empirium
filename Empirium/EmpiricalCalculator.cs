@@ -53,15 +53,13 @@ namespace Empirium
             }
 
             // Get the quantities by dividing the mass given in the input by the mass number of the given element, then dividing that by the smallest result
-            var massDivMassNumber = inputDictionary.Select(component => component.Value / component.Key.MassNumber).ToList();
-            var massDivMassNumberMin = inputDictionary.Select(component => component.Value / component.Key.MassNumber).ToList().Min();
-            var quantities = massDivMassNumber.Select(mass => mass / massDivMassNumberMin).ToList();
+            var quantities = inputDictionary.Select(component => component.Value / component.Key.MassNumber).ToList().Select(mass => mass / inputDictionary.Select(component => component.Value / component.Key.MassNumber).ToList().Min()).ToList();
             for (var index = 0; index < quantities.Count; index++)
             {
                 quantities[index] = Math.Round(quantities[index], 1);
             }
 
-            // While there is any value that is not an integer (as in, whole number, not data type), multiply them by an increasing numberS
+            // While there is any value that is not an integer (as in, whole number, not data type), multiply them by an increasing number
             var i = 1;
             while (quantities.Any(quantity => !quantity.Equals((int)quantity)) && i <= 1000)
             {
