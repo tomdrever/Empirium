@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Empirium
 {
@@ -10,7 +6,7 @@ namespace Empirium
     {
         public static void Main(string[] args)
         {
-            EmpiricalCalculator.ElementDictionary = ElementDictionary.LoadFromJSON("../../../elements.json");
+            EmpiricalCalculator.ElementDictionary = ElementDictionary.LoadFromJson("../../../elements.json");
 
             while (true)
             {

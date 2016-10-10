@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Empirium
 {
@@ -63,14 +61,14 @@ namespace Empirium
             var i = 1;
             while (quantities.Any(quantity => !quantity.Equals((int)quantity)) && i <= 1000)
             {
-                // C'mon, it's not going to work
+                // Set upper limit on mass
                 if (i == 1000)
                 {
                     return UncalculatableMessage;
                 }
 
                 // If multipling from by the increasing number will not work, do not bother
-                if (quantities.Any(quantity => !(quantity*2).Equals((int)(quantity*2))))
+                if (quantities.Any(quantity => !(quantity * 2).Equals((int)(quantity * 2))))
                 {
                     i++;
                 }
@@ -95,7 +93,8 @@ namespace Empirium
             }
 
             // Separate output and format
-            var empiricalFormula = outputDictionary.Aggregate("", (current, component) => current + component.Key + ((component.Value.Equals(1) || component.Value.Equals(0)) ? string.Empty: component.Value.ToString()) + " ");
+            var empiricalFormula = outputDictionary.Aggregate("", (current, component) =>
+                current + component.Key + (component.Value.Equals(1) || component.Value.Equals(0) ? string.Empty: component.Value.ToString()) + " ");
 
             return empiricalFormula;
         }

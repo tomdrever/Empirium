@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Empirium
 {
@@ -27,19 +24,19 @@ namespace Empirium
             return _elements.Find(element => element.Symbol == symbol);
         }
 
-        public Element GetElementFromAtomicNumber(double atomicNumber)
+        public Element GetElementFromMassNumber(double massNumber)
         {
-            var foundElement = _elements.Find(element => element.MassNumber.Equals(atomicNumber));
+            var foundElement = _elements.Find(element => element.MassNumber.Equals(massNumber));
 
             if (foundElement != null)
             {
-                return _elements.Find(element => element.MassNumber.Equals(atomicNumber));
+                return _elements.Find(element => element.MassNumber.Equals(massNumber));
             }
 
             throw new ArgumentNullException();
         }
 
-        public static ElementDictionary LoadFromJSON(string directory)
+        public static ElementDictionary LoadFromJson(string directory)
         {
             var reader = new StreamReader(directory);
             return new ElementDictionary {_elements = JsonConvert.DeserializeObject<List<Element>>(reader.ReadToEnd())};
